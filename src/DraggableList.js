@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Form';
+import CodeEditor from './CodeEditor';
 const DraggableList = ({ items }) => {
   return (
     <div>
@@ -16,9 +17,11 @@ const DraggableList = ({ items }) => {
             <input placeholder={x + 'name'} />
             <br />
             {x + '>'}
+            <button>+add more atts +</button>
           </li>
         );
       })}
+      <CodeEditor />
     </div>
   );
 };
