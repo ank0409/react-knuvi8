@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import DraggableList from './DraggableList';
 import DraggableListComponent from './DraggableListComponent';
 const NewList = (props) => {
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -45,8 +45,8 @@ const NewList = (props) => {
         </div>
       ))}
 
-     
-      <DraggableListComponent item={senditem} />
+      <DraggableList items={items} />
+      {/* <DraggableListComponent item={senditem} /> */}
     </div>
   );
 };
