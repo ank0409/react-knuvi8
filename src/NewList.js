@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import DraggableList from './DraggableList';
 import DraggableListComponent from './DraggableListComponent';
+import CodeEditor from './CodeEditor';
 const NewList = (props) => {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [items, setItems] = useState([]);
-  const [senditem, setsenditem] = useState('');
+  // const [items, setItems] = useState([]);
+  // const [senditem, setsenditem] = useState('');
+
+  const [openingtagsend, setopeningtagsend] = useState([]);
+
+  const [closingtagsend, setclosingtagsend] = useState([]);
 
   const onclickbthHandler = (index) => {
     if (index === activeIndex) {
@@ -14,10 +19,13 @@ const NewList = (props) => {
     }
   };
 
-  const btnclickPush = (e) => {
-    setItems([...items, e.target.value]);
-    setsenditem(e.target.value);
-  };
+  function btnclickPush(openingtag, closingtag, tagname) {
+    // setItems([...items, openingtag]);
+    // setsenditem(openingtag);
+    // console.log(openingtag, closingtag);
+    setopeningtagsend([...openingtagsend, openingtag]);
+    setclosingtagsend([...closingtagsend, closingtag]);
+  }
 
   return (
     <div>
@@ -25,7 +33,7 @@ const NewList = (props) => {
       {props.sendsearchresult.map((item, index) => (
         <div key={item.id}>
           <button onClick={() => onclickbthHandler(index)}>
-            {item.category_name} - {item.name_definition}
+            {item.category_name}
           </button>
 
           {activeIndex === index && (
@@ -34,7 +42,11 @@ const NewList = (props) => {
                 return (
                   <li>
                     {x.tag_name}
-                    <button onClick={btnclickPush} value={x.tag_name}>
+                    <button
+                      onClick={() => {
+                        btnclickPush(x.opening_tag, x.closing_tag, x.tag_name);
+                      }}
+                    >
                       +
                     </button>
                   </li>
@@ -44,8 +56,12 @@ const NewList = (props) => {
           )}
         </div>
       ))}
-
-      <DraggableList items={items} />
+      {/* 
+      <DraggableList
+        senddata={{ openingtag: openingtag, closingtag: closingtag }}
+      /> */}
+      <DraggableList openingtags={{ openingtagsend, closingtagsend }} />
+      <CodeEditor />
       {/* <DraggableListComponent item={senditem} /> */}
     </div>
   );

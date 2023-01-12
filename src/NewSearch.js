@@ -26,10 +26,7 @@ const NewSearch = (props) => {
   });
   return (
     <div>
-      {/* <h1>New Search</h1> */}
-      {/* Searching for...{props.searchitem} */}
       <hr />
-      
       <NewList sendsearchresult={searchResults} />
     </div>
   );

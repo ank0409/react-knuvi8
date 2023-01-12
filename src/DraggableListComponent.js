@@ -14,13 +14,14 @@ const DraggableListComponent = (props) => {
       .filter((x) => x.tag_name.includes(props.item))
       .map((x) => {
         return x.tag_name;
+        
       });
   });
 
   return (
     <div>
-      {/* {filter_tag_value} */}
-      <DraggableList items={filter_tag_value} />
+      {filter_tag_value}
+      {/* <DraggableList items={filter_tag_value} /> */}
     </div>
   );
 };

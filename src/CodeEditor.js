@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import CodeMirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -6,8 +6,10 @@ import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 
 import MyComponent from './IFrame';
-function CodeEditor({ value }) {
+
+function CodeEditor(props) {
   const editorRef = useRef(null);
+
   var valueone = `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -22,8 +24,11 @@ function CodeEditor({ value }) {
   var valuetwo = ` <script src="index.js"></script>
   </body>
 </html>`;
+
   var valueinbetween = `<h1>Heading One</h1>`;
+
   var value = valueone + valueinbetween + '\n' + valuetwo;
+
   useEffect(() => {
     const editor = CodeMirror.fromTextArea(editorRef.current, {
       value: value,
@@ -32,11 +37,13 @@ function CodeEditor({ value }) {
       theme: 'material',
     });
   }, []);
-
+  const [myVariable, setMyVariable] = useState(
+    '<h1>Heading One</h1><p>Test Paragraph</p>'
+  );
   return (
     <>
       <textarea ref={editorRef} defaultValue={value} />
-      <MyComponent />
+      <MyComponent sendhtml={myVariable} />
     </>
   );
 }

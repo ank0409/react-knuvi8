@@ -7,8 +7,8 @@ const data = [
     tags: [
       {
         id: 1,
-        tag_name: 'input',
-        syntax: '<input',
+        tag_name: 'Input',
+        syntax: '<input>',
         tag_name_description: 'Defines an HTML form for user input',
         default_value: 'some default value here aabbcc',
         browser_support: ['Chrome', 'IE', 'browser support'],
@@ -16,7 +16,10 @@ const data = [
         global_attributes: 'True',
         event_attributes: 'True',
         default_css_setting: 'None',
-        closing_tag: 'True',
+        opening_tag: '<input>',
+        closing_tag: 'false',
+        value_input_required: 'false',
+        atts_required: 'true',
         tag_attributes: [
           {
             att: 'autocomplete',
@@ -42,8 +45,8 @@ const data = [
       },
       {
         id: 2,
-        tag_name: 'textarea',
-        syntax: '<textarea',
+        tag_name: 'Textarea',
+        syntax: '<textarea></textarea>',
         tag_name_description: 'Defines an input control',
         default_value: 'some default value here',
         browser_support: ['Chrome', 'IE'],
@@ -51,7 +54,10 @@ const data = [
         global_attributes: 'True',
         event_attributes: 'True',
         default_css_setting: 'None',
-        closing_tag: 'False',
+        opening_tag: '<textarea>',
+        closing_tag: '</textarea>',
+        value_input_required: 'false',
+        atts_required: 'true',
         tag_attributes: [
           {
             att: 'max',
@@ -80,8 +86,8 @@ const data = [
     tags: [
       {
         id: 1,
-        tag_name: 'test tag name',
-        syntax: '<input>',
+        tag_name: 'Heading One',
+        syntax: '<h1></h1>',
         tag_name_description: 'Defines an HTML form for user input',
         default_value: 'unique',
         browser_support: ['Chrome', 'IE'],
@@ -89,33 +95,16 @@ const data = [
         global_attributes: 'True',
         event_attributes: 'True',
         default_css_setting: 'None',
-        tag_attributes: [
-          {
-            att: 'autocomplete',
-            att_value: ['on', 'off'],
-            att_description: 'attributes description',
-          },
-          {
-            att: 'formmethod',
-            att_value: ['get', 'post'],
-            att_description: 'attributes description',
-          },
-          {
-            att: 'disabled',
-            att_value: ['diabled'],
-            att_description: 'attributes description',
-          },
-          {
-            att: 'alt',
-            att_value: ['text'],
-            att_description: 'attributes description',
-          },
-        ],
+        opening_tag: '<h1>',
+        closing_tag: '</h1>',
+        value_input_required: 'false',
+        atts_required: 'false',
+        tag_attributes: ['false'],
       },
       {
         id: 2,
-        tag_name: 'formatting_textarea',
-        syntax: '<textarea>',
+        tag_name: 'Paragraph',
+        syntax: '<p></p>',
         tag_name_description: 'Defines an input control',
         default_value: 'some default value here',
         browser_support: ['Chrome', 'IE'],
@@ -123,23 +112,11 @@ const data = [
         global_attributes: 'True',
         event_attributes: 'True',
         default_css_setting: 'None',
-        tag_attributes: [
-          {
-            att: 'max',
-            att_value: ['number', 'date'],
-            att_description: 'attributes description',
-          },
-          {
-            att: 'src',
-            att_value: ['URL'],
-            att_description: 'attributes description',
-          },
-          {
-            att: 'value',
-            att_value: ['text'],
-            att_description: 'attributes description',
-          },
-        ],
+        opening_tag: '<p>',
+        closing_tag: '</p>',
+        value_input_required: 'false',
+        atts_required: 'false',
+        tag_attributes: ['false'],
       },
     ],
   },

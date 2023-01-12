@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import CodeEditor from './CodeEditor';
-const DraggableList = ({ items }) => {
+
+const DraggableList = ({ openingtags }) => {
   return (
     <div>
       <hr />
-      <h1>List items will be added here...</h1>
-      {items.map((x, index) => {
+      <h1>List items will be added here.</h1>
+      {/* {items.map((x, index) => {
         return (
           <li key={index}>
             {x}
@@ -20,8 +20,26 @@ const DraggableList = ({ items }) => {
             <button>+add more atts +</button>
           </li>
         );
+      })} */}
+
+      {/* {senddata.map((x) => {
+        return <li>{x.openingtag}</li>;
+      })} */}
+      {/* {
+        senddata.openingtag.map((x)=>{
+          return <li>{senddata.openingtag}</li>
+        })
+      } */}
+
+      {/* <li>Opening Tag: {senddata.openingtag}</li>
+      <li>Closing Tag: {senddata.closingtag}</li> */}
+
+      {openingtags.openingtagsend.map((x, index) => {
+        return <li key={index}>{x}</li>;
       })}
-      <CodeEditor />
+      {openingtags.closingtagsend.map((x, index) => {
+        return <li key={index}>{x}</li>;
+      })}
     </div>
   );
 };
