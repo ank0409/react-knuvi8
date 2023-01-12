@@ -7,9 +7,13 @@ const DraggableList = ({ sendtags }) => {
       <hr />
       <h1>List items will be added here.</h1>
 
-      {sendtags.syntaxgtagsend.map((syntax, index) => {
-        return <li key={index}>{syntax}</li>;
+      {sendtags.map((x) => {
+        return <>{x.syntaxgtagsend}</>;
       })}
+
+      {/* {sendtags.syntaxgtagsend.map((syntax, index) => {
+        return <li key={index}>{syntax}</li>;
+      })} */}
     </div>
   );
 };

@@ -66,7 +66,7 @@ const NewList = (props) => {
         senddata={{ openingtag: openingtag, closingtag: closingtag }}
       /> */}
       <DraggableList
-        sendtags={{ openingtagsend, closingtagsend, syntaxgtagsend }}
+        sendtags={[{ openingtagsend, closingtagsend, syntaxgtagsend }]}
       />
       <CodeEditor />
       {/* <DraggableListComponent item={senditem} /> */}
