@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Form from './Form';
 
-const DraggableList = ({ openingtags }) => {
+const DraggableList = ({ sendtags }) => {
   return (
     <div>
       <hr />
@@ -34,12 +34,12 @@ const DraggableList = ({ openingtags }) => {
       {/* <li>Opening Tag: {senddata.openingtag}</li>
       <li>Closing Tag: {senddata.closingtag}</li> */}
 
-      {openingtags.openingtagsend.map((x, index) => {
+      {sendtags.syntaxgtagsend.map((x, index) => {
         return <li key={index}>{x}</li>;
       })}
-      {openingtags.closingtagsend.map((x, index) => {
+      {/* {sendtags.closingtagsend.map((x, index) => {
         return <li key={index}>{x}</li>;
-      })}
+      })} */}
     </div>
   );
 };

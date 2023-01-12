@@ -8,7 +8,7 @@ const data = [
       {
         id: 1,
         tag_name: 'Input',
-        syntax: '<input>',
+        syntax: 'input',
         tag_name_description: 'Defines an HTML form for user input',
         default_value: 'some default value here aabbcc',
         browser_support: ['Chrome', 'IE', 'browser support'],
@@ -46,7 +46,7 @@ const data = [
       {
         id: 2,
         tag_name: 'Textarea',
-        syntax: '<textarea></textarea>',
+        syntax: 'textarea',
         tag_name_description: 'Defines an input control',
         default_value: 'some default value here',
         browser_support: ['Chrome', 'IE'],
@@ -87,7 +87,7 @@ const data = [
       {
         id: 1,
         tag_name: 'Heading One',
-        syntax: '<h1></h1>',
+        syntax: 'h1',
         tag_name_description: 'Defines an HTML form for user input',
         default_value: 'unique',
         browser_support: ['Chrome', 'IE'],
@@ -104,7 +104,7 @@ const data = [
       {
         id: 2,
         tag_name: 'Paragraph',
-        syntax: '<p></p>',
+        syntax: 'p',
         tag_name_description: 'Defines an input control',
         default_value: 'some default value here',
         browser_support: ['Chrome', 'IE'],

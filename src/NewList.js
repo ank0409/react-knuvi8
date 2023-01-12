@@ -8,9 +8,8 @@ const NewList = (props) => {
   // const [senditem, setsenditem] = useState('');
 
   const [openingtagsend, setopeningtagsend] = useState([]);
-
   const [closingtagsend, setclosingtagsend] = useState([]);
-
+  const [syntaxgtagsend, setsyntaxtagsend] = useState([]);
   const onclickbthHandler = (index) => {
     if (index === activeIndex) {
       setActiveIndex(-1);
@@ -19,12 +18,13 @@ const NewList = (props) => {
     }
   };
 
-  function btnclickPush(openingtag, closingtag, tagname) {
+  function btnclickPush(openingtag, closingtag, tagname, syntax) {
     // setItems([...items, openingtag]);
     // setsenditem(openingtag);
     // console.log(openingtag, closingtag);
     setopeningtagsend([...openingtagsend, openingtag]);
     setclosingtagsend([...closingtagsend, closingtag]);
+    setsyntaxtagsend([...syntaxgtagsend, syntax]);
   }
 
   return (
@@ -44,7 +44,12 @@ const NewList = (props) => {
                     {x.tag_name}
                     <button
                       onClick={() => {
-                        btnclickPush(x.opening_tag, x.closing_tag, x.tag_name);
+                        btnclickPush(
+                          x.opening_tag,
+                          x.closing_tag,
+                          x.tag_name,
+                          x.syntax
+                        );
                       }}
                     >
                       +
@@ -60,7 +65,9 @@ const NewList = (props) => {
       <DraggableList
         senddata={{ openingtag: openingtag, closingtag: closingtag }}
       /> */}
-      <DraggableList openingtags={{ openingtagsend, closingtagsend }} />
+      <DraggableList
+        sendtags={{ openingtagsend, closingtagsend, syntaxgtagsend }}
+      />
       <CodeEditor />
       {/* <DraggableListComponent item={senditem} /> */}
     </div>
